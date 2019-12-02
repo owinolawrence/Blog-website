@@ -109,3 +109,12 @@ def comment(post_id):
             return render_template('post.html',comments=comments,post=post) 
     return render_template('post.html',comments=comments,post=post) 
 
+@main.route('/delete_comment/<int:post_id>',methods= ['POST','GET'])
+@login_required
+def delete_comment(post_id):
+    comment= Comment.query.filter_by(post_id = post_id).first()
+    comment.delete_comment()
+    
+    
+    return redirect(url_for('main.post',post_id=post_id))          
+    
