@@ -73,3 +73,12 @@ def update_post(post_id):
     
     return redirect(url_for('main.displayposts'))
 
+@main.route('/delete_post/<int:post_id>',methods= ['POST','GET'])
+@login_required
+def delete_post(post_id):
+    post= Post.query.filter_by(id = post_id).first()
+    post.delete_post()
+    
+    
+    return redirect(url_for('main.displayposts'))
+
