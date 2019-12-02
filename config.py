@@ -5,10 +5,10 @@ class Config(object):
       
      DEBUG = False
      TESTING = False
-    #  SQLALCHEMY_DATABASE_URI='postgresql+psycopg2://moringa:72330000@localhost/blogwebsite'
-    #  QUOTES_API = 'http://quotes.stormconsultancy.co.uk/random.json'
-    #  SECRET_KEY = '435313ea80b5a872114356a1'
-    #  SQLALCHEMY_TRACK_MODIFICATIONS = True
+     SQLALCHEMY_DATABASE_URI='postgresql+psycopg2://moringa:72330000@localhost/blogwebsite'
+     QUOTES_API = 'http://quotes.stormconsultancy.co.uk/random.json'
+     SECRET_KEY = '435313ea80b5a872114356a1'
+     SQLALCHEMY_TRACK_MODIFICATIONS = True
     #  UPLOADED_PHOTOS_DEST='app/static/photos'
     
      
