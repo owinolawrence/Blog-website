@@ -33,3 +33,23 @@ def profile(username):
     user = User.query.filter_by(username = username).first()
     return render_template('profile.html',title='Profile',user=user)
 
+@main.route('/write_post/new',methods= ['POST','GET'])
+@login_required
+def write_post():
+    if request.method == 'POST':
+        form = request.form
+        title = form.get("title")
+        content = form.get("content")
+        category= form.get("category")
+        
+        if  title==None or content==None :
+            error = "Post must have some content and title"
+            return render_template('write_post.html', error=error)
+        else:
+            post = Post( title=title,content=content,category=category,author = current_user.username, user_id= current_user.id)
+            post.save_post()
+            return redirect(url_for("main.displayposts"))            
+    return render_template('write_post.html',title='Write')
+
+
+
