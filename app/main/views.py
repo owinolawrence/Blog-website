@@ -23,3 +23,7 @@ def displayposts():
      return render_template('display_posts.html',posts=posts,quote=quote)
 
 
+@main.route('/subscribe')
+def subscribe():
+    return render_template('subcription.html',title='Subscribe')
+
