@@ -27,3 +27,9 @@ def displayposts():
 def subscribe():
     return render_template('subcription.html',title='Subscribe')
 
+@main.route('/profile/<username>')
+@login_required
+def profile(username):
+    user = User.query.filter_by(username = username).first()
+    return render_template('profile.html',title='Profile',user=user)
+
