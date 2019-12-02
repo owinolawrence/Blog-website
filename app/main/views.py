@@ -66,3 +66,10 @@ def update_profile_pic(username):
 
     return redirect(url_for('main.profile', username = username))
 
+@main.route('/display_all/update_post/<int:post_id>')
+@login_required
+def update_post(post_id):
+    
+    
+    return redirect(url_for('main.displayposts'))
+
