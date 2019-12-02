@@ -15,3 +15,11 @@ def index():
     return render_template('index.html',quotes=quotes)
 
 
+@main.route('/display_all', methods= ['POST','GET'])
+def displayposts():
+     posts = Post.query.all()
+     quote = get_Quotes()
+     print(quote)
+     return render_template('display_posts.html',posts=posts,quote=quote)
+
+
