@@ -15,8 +15,8 @@
                             style="width:5%;height:auto;"></a>
                     {%elif current_user.is_authenticated and current_user.profile_img is not none %}
 
-                    <a class=" nav-link active"
-                        href="{{ url_for('main.profile',username=current_user.username) }}"> Welcome
+                    <a class=" nav-link active" href="{{ url_for('main.profile',username=current_user.username) }}">
+                        Welcome
                         {{current_user.username}}</a>
                     <a class=" nav-link active" href="{{ url_for('main.profile',username=current_user.username) }}"><img
                             src="{{url_for('static', filename = current_user.profile_img)}}" alt=""
@@ -26,8 +26,8 @@
 
                         <li>
                             <a class="navbar-brand mr-3" href="/">Blog</a></li>
-                         <li><a class="nav-item nav-link active" href="{{ url_for('main.displayposts') }}">Home</a>
-                            </li>
+                        <li><a class="nav-item nav-link active" href="{{ url_for('main.displayposts') }}">Home</a>
+                        </li>
                     </ul>
 
                     {%endif%}
