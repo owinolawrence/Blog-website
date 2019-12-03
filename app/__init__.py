@@ -30,12 +30,11 @@ def  create_app(Configname):
     # bootstrap.init_app(app)
     mail.init_app(app)
 
-     # configure UploadSet
+    # configure UploadSet
     configure_uploads(app,photos)
     # registering main blueprint
     from .main import main as main_blueprint
     app.register_blueprint(main_blueprint)
-
 
     # registering auth blueprint
     from .auth import auth as auth_blueprint
