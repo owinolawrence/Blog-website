@@ -4,7 +4,6 @@ from .models import Quotes
 
 quotes_api = Config.QUOTES_API
 base_url = None
-
 def get_Quotes():
   
   with urllib.request.urlopen(quotes_api) as url:
