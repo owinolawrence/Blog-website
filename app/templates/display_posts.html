@@ -13,41 +13,36 @@
 {% endblock %}
 {%block content%}
 {% for post in posts %}
-<div class="container mt-5">
+<div class="container">
+    <div class="card">
+        <div class="row">
 
-    <div class="row">
+            <div class="col-md-6">
 
-        <div class="col-md-8">
+                <p class="mr-2" href="#">Author : {{ post.author|capitalize}}</p>
+                <p class="text-muted"> Date: {{ post.date_posted.strftime('%Y-%m-%d') }} </p>
 
-            <a class="mr-2" href="#">Author : {{ post.author|capitalize}}</a>
-            <small class="text-muted"> Date: {{ post.date_posted.strftime('%Y-%m-%d') }} </small>
-
-
-            <h2><a class="" href="{{ url_for('main.post', post_id=post.id) }}">{{ post.title }}</a></h2>
-            <p class="">{{ post.content|truncate(500) }}</p>
-
-
-            <a class=" " href="{{ url_for('main.post', post_id=post.id) }}">View More ...</a>
-
-
-            <a class=" ml-5 " href="{{ url_for('main.post', post_id=post.id) }}">Comment</a>
-        </div>
-        {% endfor %}
-        <div class="col-md-4">
-            <div class="card-body quote">
-
-                <p class="card-text quote">"{{quote.quote}}"</p><br>
-                <small>
-                    <p class="text-muted"> {{quote.author|capitalize}} <small>
-                        </small>
             </div>
+            <div class="col-md-6">
+                <p><a class="" href="{{ url_for('main.post', post_id=post.id) }}">{{ post.title }}</a></p>
+                <p class="">{{ post.content|truncate(500) }}</p>
+            </div>
+
         </div>
+        <div class="row">
+            <div class="col-md-6">
+                <h1 class=" " href="{{ url_for('main.post', post_id=post.id) }}">View More</h1>
+            </div>
+
+
+            <div class="col-md-6">
+                <h1 class=" ml-5 " href="{{ url_for('main.post', post_id=post.id) }}">Comment</h1>
+            </div>
+            {% endfor %}
+        </div>
+
     </div>
 
 </div>
-
-
-
-
 
 {%endblock%}
