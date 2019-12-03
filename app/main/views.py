@@ -8,7 +8,7 @@ from app.requests import get_Quotes
 
 
 @main.route('/')
-def index():
+def home():
     quotes=get_Quotes()
     print(quotes)
    
